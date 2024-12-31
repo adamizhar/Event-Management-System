@@ -14,7 +14,7 @@ public class EventManagementSystem {
         }
     }
 
-    public static void deleteEvent(int eventID) {
+    public static void deleteEvent(int eventID) { //pening nak explain 
         for (int i = 0; i < eventCount; i++) {
             if (events[i].getEventID() == eventID) {
                 events[i] = events[--eventCount];
@@ -100,10 +100,7 @@ public class EventManagementSystem {
                     int deleteID = scanner.nextInt();
                     deleteEvent(deleteID);
                     break;
-                case 3:
-                    System.out.println("----------");
-                    System.out.println("Event Listed");
-                    System.out.println("----------");
+                    case 3:
                     System.out.print("Enter Event ID to update: ");
                     int updateID = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
@@ -113,6 +110,7 @@ public class EventManagementSystem {
                     String updatedDate = scanner.nextLine();
                     System.out.print("Enter event type (Academic/Cultural): ");
                     String updateType = scanner.nextLine();
+
                     if (updateType.equalsIgnoreCase("Academic")) {
                         System.out.print("Enter Speaker Name: ");
                         String updatedSpeaker = scanner.nextLine();
@@ -130,7 +128,9 @@ public class EventManagementSystem {
                     }
                     break;
                 case 4:
+                    System.out.println("\n");
                     listEvents();
+                    System.out.println("\n");
                     break;
                 case 5:
                     System.out.println("Exiting... Goodbye!");
